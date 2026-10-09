@@ -74,3 +74,11 @@ for i in "${patch_files[@]}"; do
     esac
 
 done
+echo "=== Iniciando Aplicacao dos Patches do DroidSpaces ==="
+# Garante que estamos na raiz do codigo-fonte do kernel
+cd ../kernel-source
+# Aplica o primeiro patch apontando para a pasta correta
+git apply ../patches/01.fix_kernel_panic_in_xt_qtaguid.patch || patch -p1 < ../patches/01.fix_kernel_panic_in_xt_qtaguid.patch
+# Aplica o segundo patch apontando para a pasta correta
+git apply ../patches/02.fix_restore_cgroup_file_prefix_handling.patch || patch -p1 < ../patches/02.fix_restore_cgroup_file_prefix_handling.patch
+echo "=== Patches do DroidSpaces processados ==="
