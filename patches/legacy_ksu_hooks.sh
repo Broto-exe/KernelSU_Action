@@ -77,7 +77,7 @@ done
 echo "=== Iniciando Aplicacao dos Patches do DroidSpaces ==="
 # Garante que estamos na raiz do codigo-fonte do kernel
 # Copia o seu defconfig customizado para a pasta de configuracoes do kernel
-cp ../config/android_defconfig arch/arm64/configs/android_defconfig
+cp ../config/ginkgo_defconfig arch/arm64/configs/ginkgo_defconfig
 cd ../kernel-source
 # Aplica o primeiro patch apontando para a pasta correta
 git apply ../patches/01.fix_kernel_panic_in_xt_qtaguid.patch || patch -p1 < ../patches/01.fix_kernel_panic_in_xt_qtaguid.patch
